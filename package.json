@@ -9,5 +9,8 @@
     "express": "3.3.4",
     "jade": "*",
     "mongoose": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
   }
 }
