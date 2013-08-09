@@ -1,8 +1,16 @@
+ /*
+ *
+ */
+ title = '随心小筑';
+ subTitle = ''
+ password = '356256384.sx';
+ author = 'chuguixin';
+ icon = 'file_name.ico';
 
 /**
  * Module dependencies.
  */
-
+var siteUrl, imageUrl;
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
