@@ -2,13 +2,16 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema
     ,ObjectId = Schema.ObjectId;
-var db_name = 'WZUaEmHEHLIsuOxrzFlI';                  // 数据库名，从云平台获取
+
+
+var db_name = '';                                       // 数据库名，从云平台获取
 var db_host =  process.env.BAE_ENV_ADDR_MONGO_IP;      // 数据库地址
 var db_port =  +process.env.BAE_ENV_ADDR_MONGO_PORT;   // 数据库端口
 var username = process.env.BAE_ENV_AK;                 // 用户名
 var password = process.env.BAE_ENV_SK;                 // 密码
 
-var db = mongoose.connect(db_host + db_port + db_name).connection;
+var db_url = db_host + db_port + db_name;
+var db = mongoose.connect(db_url).connection;
 
 //The MongoDB Schema for posts
 
