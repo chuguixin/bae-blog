@@ -1,7 +1,7 @@
 {
   "name": "node-blog",
   "version": "0.0.1",
-  "description": "suixin-blog Simple Style && Modified from Node2Blog",
+  "description": "node-blog Simple Style && just for BAE",
   "private": true,
   "scripts": {
     "start": "node server.js"
