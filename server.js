@@ -5,13 +5,14 @@
  subTitle = ''
  password = '356256384.sx';
  author = 'chuguixin';
- icon = 'file_name.ico';
+ icon = 'favicon.ico';
 
 /**
  * Module dependencies.
  */
 var siteUrl, imageUrl;
 var express = require('express')
+  , MemcacheStore = require('connect-memcache')(express)
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
