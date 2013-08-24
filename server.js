@@ -2,7 +2,7 @@
  *
  */
  title = '随心小筑';
- subTitle = '';
+ subTitle = '';//
  password = '';//password for the admin of your blog
  author = 'chuguixin';
  icon = 'favicon.ico';
@@ -40,5 +40,5 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('your blog server listening on port ' + app.get('port'));
 });
