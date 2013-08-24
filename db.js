@@ -20,7 +20,12 @@ var postSchema = new Schema({
     title: { type: String },
     title_sub: { type: String },
     content: { type: String },
-    date: { type: String }
+    date: { type: String },
+    meta: {
+        votes: Number,
+        favs:  Number
+    },
+    classification : { type: String}
 })
 
 //The MongoDB Schema for each post's comments
@@ -30,7 +35,8 @@ var commentSchema = new Schema({
     title_sub: { type: String },
 	name: { type: String },
 	comment: { type: String },
-	date: { type: String }
+	date: { type: String },
+    hidden :  { type: Boolean, default: true }
 })
 
 var post = db.model('post', postSchema);
