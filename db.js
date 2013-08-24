@@ -4,7 +4,7 @@ var Schema = mongoose.Schema
     ,ObjectId = Schema.ObjectId;
 
 
-var db_name = '';                                       // 数据库名，从云平台获取
+var db_name = ''; //Provided by BAE                                      // 数据库名，从云平台获取
 var db_host =  process.env.BAE_ENV_ADDR_MONGO_IP;      // 数据库地址
 var db_port =  +process.env.BAE_ENV_ADDR_MONGO_PORT;   // 数据库端口
 var username = process.env.BAE_ENV_AK;                 // 用户名

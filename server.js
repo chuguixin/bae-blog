@@ -2,8 +2,8 @@
  *
  */
  title = '随心小筑';
- subTitle = ''
- password = '356256384.sx';
+ subTitle = '';
+ password = '';//password for the admin of your blog
  author = 'chuguixin';
  icon = 'favicon.ico';
 
