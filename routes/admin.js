@@ -1,10 +1,12 @@
 //admin router
 var mongoose = require('mongoose');
 var db 		 = require('../db');
-var post = mongoose.model('post');
+var post = db.post;
 var error;
 var date 	 = new Date();
-
+var blogConfig = require('../blogConfig');
+var title = blogConfig.title,
+    subTitle = blogConfig.subTitle;
 //
 function formatAMPM(date) {
   var hours = date.getHours();
