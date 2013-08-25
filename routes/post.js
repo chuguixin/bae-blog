@@ -5,11 +5,12 @@ var db = require('../db');
 var post = db.post;
 var commentss = db.comment;
 var date = new Date();
+var blogConfig = require('../blogConfig');
 
 //Single post view
 exports.post_view = function(req, res) {
 
-	id = req.params.id;
+	var id = req.params.id;
 	post.find({
 		'_id': id
 	}, function(err, post) {
@@ -47,11 +48,12 @@ exports.post_view = function(req, res) {
 		}
 	});
 }
+
 exports.post_view_post_handler = function(req, res) {
-	id = req.params.id;
-	title_sub = req.params.title;
-	name = req.body.name || 'anon';
-	comment = req.body.comment || 'Nothing';
+	var id = req.params.id;
+	var title_sub = req.params.title;
+	var name = req.body.name || blogConfig.comment.defaultName || '“无名”子';
+	var comment = req.body.comment || blogConfig.comment.defaultComment || '天空没有留下鸟的痕迹，但我已经飞过。';
 	console.log(name + ' said ' + comment);
 	console.log(id);
 
