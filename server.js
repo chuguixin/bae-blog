@@ -10,11 +10,14 @@
  /**
   * Module dependencies.
   */
- var siteUrl, imageUrl;
+ //var siteUrl, imageUrl;
  var express = require('express'),
  	MemcacheStore = require('connect-memcache')(express),
- 	routes = require('./routes'),
- 	user = require('./routes/user'),
+ 	db = require('./db'),
+ 	post_model = db.post,
+ 	admin = require('./routes/admin'),
+ 	home = require('./routes/home'),
+ 	post = require('./routes/post'),
  	http = require('http'),
  	path = require('path');
 
@@ -36,8 +39,37 @@
  	app.use(express.errorHandler());
  }
 
- app.get('/', routes.index);
- app.get('/users', user.list);
+ app.get('/', home.index);
+ app.post('/', home.home_post_handler);
+
+ app.get('/admin/delete', admin.delete);
+ app.post('/admin/delete', admin.delete_post_handler);
+
+ app.get('/admin/new', admin.new);
+ app.post('/admin/new', admin.new_post_handler);
+
+ app.get('/post/:id/:title', post.post_view);
+ app.post('/post/:id/:title', post.post_view_post_handler);
+
+ app.get('/admin', admin.admin_check);
+ app.post('/admin', admin.admin_check_post_handler);
+
+ app.get('/admin/:id/edit', admin.admin_edit);
+ app.post('/admin/:id/edit', admin.admin_edit_post_handler);
+
+ app.get('/admin/logout', function(req, res) {
+ 	delete req.session.admin;
+ 	console.log('admin logged-out at' + (new Date).toLocalDateString())
+ 	res.redirect('/');
+ });
+
+ app.get('/about', function(req, res) {
+ 	res.render('about', {
+ 		title: title,
+ 		subTitle: subTitle,
+ 		admin: req.session.admin
+ 	});
+ });
 
  http.createServer(app).listen(app.get('port'), function() {
  	console.log('your blog server listening on port ' + app.get('port'));
