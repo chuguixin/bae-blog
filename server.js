@@ -9,27 +9,28 @@
   */
  //var siteUrl, imageUrl;
  var express = require('express'),
- 	MemcacheStore = require('connect-memcache')(express),
+//   MemcacheStore = require('connect-memcache')(express),
  	db = require('./db'),
  	post_model = db.post,
  	admin = require('./routes/admin'),
  	home = require('./routes/home'),
  	post = require('./routes/post'),
  	http = require('http'),
- 	path = require('path');
+ 	path = require('path'),
+	port = process.env.APP_PORT;
 
  var app = express();
 
  // all environments
- app.set('port', process.env.PORT || 3000);
+ app.set('port', port);
  app.set('views', __dirname + '/views');
  app.set('view engine', 'jade');
+ app.use(express.logger());
+ app.use(express.commpress());
  app.use(express.favicon());
- app.use(express.logger('dev'));
  app.use(express.bodyParser());
  app.use(express.methodOverride());
  app.use(app.router);
- app.use(express.static(path.join(__dirname, 'public')));
 
  // development only
  if ('development' == app.get('env')) {
