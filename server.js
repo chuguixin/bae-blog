@@ -1,6 +1,3 @@
- /*
-  *
-  */
  // title = '随心小筑';
  // subTitle = ''; //
  // password = ''; //password for the admin of your blog
