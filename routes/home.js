@@ -18,3 +18,8 @@ exports.index = function(req, res){
     });
 
 };
+
+//you can do what you want to do
+exports.home_post_handler = function(req, res){
+
+}

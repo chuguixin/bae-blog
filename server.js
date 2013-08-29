@@ -1,9 +1,3 @@
- // title = '随心小筑';
- // subTitle = ''; //
- // password = ''; //password for the admin of your blog
- // author = 'chuguixin';
- // icon = 'favicon.ico';
-
  /**
   * Module dependencies.
   */
@@ -26,7 +20,7 @@
  app.set('views', __dirname + '/views');
  app.set('view engine', 'jade');
  app.use(express.logger());
- app.use(express.commpress());
+ app.use(express.compress());
  app.use(express.favicon());
  app.use(express.bodyParser());
  app.use(express.methodOverride());
