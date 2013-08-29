@@ -2,6 +2,7 @@
   "name": "blog4bae",
   "version": "0.0.1",
   "description": "bae-blog Simple Style && just for BAE",
+  "keywords" : ["node","blog","bae","CMS"],
   "private": true,
   "scripts": {
     "start": "node server.js"
@@ -15,11 +16,16 @@
     "express": "3.3.5",
     "jade": "*",
     "mongoose": "*",
-    "mongodb":"*",
-    "rss":"0.0.4"
+    "mongodb": "*",
+    "rss": "0.0.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1"
   },
-  "main": "server.js"
+  "main": "server.js",
+  "repositories" : [{
+    "type" : "git",
+    "url" : "git@github.com:chuguixin/bae-blog.git"
+  }],
+  "licenses" : "MIT"
 }

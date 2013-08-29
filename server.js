@@ -3,7 +3,7 @@
   */
  //var siteUrl, imageUrl;
  var express = require('express'),
-//   MemcacheStore = require('connect-memcache')(express),
+ 	//   MemcacheStore = require('connect-memcache')(express),
  	db = require('./db'),
  	post_model = db.post,
  	admin = require('./routes/admin'),
@@ -11,7 +11,7 @@
  	post = require('./routes/post'),
  	http = require('http'),
  	path = require('path'),
-	port = process.env.APP_PORT;
+ 	port = process.env.APP_PORT;
 
  var app = express();
 

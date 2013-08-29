@@ -14,7 +14,7 @@ var db_url = db_host + db_port + db_name;
 var db = mongoose.connect(db_url);
 
 var dbConection = mongoose.connection;
-dbConection.on('error', function(){
+dbConection.on('error', function() {
     console.error('mongodb connection error:')
 });
 // db.once('open', function callback () {
